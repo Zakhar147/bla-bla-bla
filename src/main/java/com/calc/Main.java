@@ -1,6 +1,7 @@
 package com.calc;
 
 
+import com.calc.entities.WingGeometryCalculator;
 import com.calc.models.Aircraft;
 
 import java.util.Scanner;
@@ -30,5 +31,9 @@ public class Main {
         System.out.println("\nComponent Masses:");
         aircraft.displayComponentMasses();
         System.out.println("Total Aircraft Mass: " + aircraft.calculateTotalMass() + " kg");
+
+        double loadFactor = 750; // кг/м²
+        WingGeometryCalculator wingCalc = new WingGeometryCalculator(aircraftMass, loadFactor);
+        wingCalc.printAll();
     }
 }
